@@ -1,0 +1,79 @@
+<!-- 
+              Encrypter       version--  1.0
+William S. Peña [waamirdev@gmail.com] 23rd December, 2022 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador - WaamirDev</title>
+    <link rel="shortcut icon" href="assets/images/icon.ico">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="assets/images/Logo_Alura.png" alt="Alura Logo" class="alura__logo">    
+    </header>
+    <main class="main">
+        <section class="input__container">
+            <div class="input__text">
+                <textarea name="text__input" id="" cols="30" rows="10" class="text__input" placeholder="Insert Text Here..."></textarea>
+            </div>
+            <div class="warning">
+                <img src="assets/images/Warning_sign.png" alt="Warning Sign" class="warning__sign">
+                <span>Only lowercase letters are processed</span>
+            </div>
+            <div class="input__btns">
+                <button id="encrypt__btn" class="encrypt__btn">Encrypt</button>
+                <button id="decrypt__btn" class="decrypt__btn">Decrypt</button>
+            </div>
+        </section>
+        <section class="output__container" id="output__container">
+            <div class="no__output__text__container">
+                <div class="person__image">
+                    <img src="assets/images/Muñeco.png" alt="Person">
+                </div>
+                <div class="messages">
+                    <p class="no__message">No message was found</p>
+                    <p class="order">Insert the text you want to be Encrypt or Decrypt.</p>
+                </div>
+            </div>
+            <div class="output__text__container" id="output__text__container">
+                <div class="output__text">
+                    <textarea name="" id="" cols="30" rows="10" readonly="true" class="text__output"></textarea>
+                </div>
+                <div class="output__btn">
+                    <button id="copy__btn" class="copy__btn">Copy</button>
+                </div>
+            </div>
+        </section>
+        <div class="matrix__container">
+            <canvas id="matrix__effect" class="matrix__effect" ></canvas>
+        </div>
+    </main>
+    <div class="background__gradient"></div>
+    <footer>
+        <div class="footer">
+            <div class="logo__author__container">
+                <img src="assets/images/waamirdev_logo.png" class="logo__wd" alt="WaamirDev Logo" >
+            </div>
+            <hr>
+            <section class="social__media">
+                <a href="https://www.linkedin.com/in/waamirdev-william-pe%C3%B1a" target="_blank"><img src="assets/images/LinkedIn logo.png" alt="LinkedIn Logo" class="social__media__logos"></a>
+                <a href="https://github.com/waamir104" target="_blank"><img src="assets/images/GitHub logo.png" alt="GitHub Logo" class="social__media__logos"></a>
+            </section>
+            <section class="copyright">
+                <p>&#169 Copyright 2022 WaamirDev. All Rights Reserved</p>
+                <p>All individual works are copyright protected by their owners & contributors.</p>
+            </section>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/matrix_script.js"></script>
+</body>
+</html>
