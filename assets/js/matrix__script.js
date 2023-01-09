@@ -1,5 +1,5 @@
-//             Encrypter   --version  2.0
-// William S. Peña [waamirdev@gmail.com] 2nd January, 2023
+//             Encrypter   --version  2.1
+// William S. Peña [waamirdev@gmail.com] 9th January, 2023
 window.addEventListener("resize", resize__canvas);
 // Get the canvas node and the drawing context
 const canvas = document.getElementById('matrix__effect');

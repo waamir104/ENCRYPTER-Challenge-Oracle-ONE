@@ -1,5 +1,5 @@
-//             Encrypter   --version  2.0
-// William S. Peña [waamirdev@gmail.com] 2nd January, 2023
+//             Encrypter   --version  2.1
+// William S. Peña [waamirdev@gmail.com] 9th January, 2023
 
 // Event Listeners 
 document.getElementById('encrypt__btn').addEventListener('click', encrypt);
@@ -31,6 +31,8 @@ function validate__message() {
     textarea__input.value = textarea__input__trimmed__value;
 
     if (textarea__input__trimmed__value < 1) {
+        dont__show__output__container();
+        adjust__output__container();
         return false;
     } else {
         return true;
@@ -50,6 +52,17 @@ function show__output__text__container() {
     // Calls Functions
     adjust__output__container();
     resize__canvas(); // matrix__script.js function
+}
+
+// Do not show the output__text__container
+
+function dont__show__output__container() {
+    no__output__text__container.style.display = 'block';
+    no__output__text__container.style.opacity = '1';
+    output__text__container.style.display = 'none';
+    output__text__container.style.opacity = '0';
+    matrix__container.style.display = 'none';
+    matrix__container.style.opacity = '0';
 }
 
 // Encrypts the inserted value
@@ -113,10 +126,23 @@ function copy__output__text() {
 
 function adjust__output__container() {
         let output__text__container__display = getComputedStyle(output__text__container).display;
+        let no__output__text__container__display = getComputedStyle(no__output__text__container).display;
 
         if (output__text__container__display == 'block') {
             let output__text__container__final__height = parseFloat(getComputedStyle(output__text__container).height) + 'px';
 
             output__container.style.height = output__text__container__final__height;
+            console.log(output__text__container__final__height);
+        } else if (no__output__text__container__display == 'block') {
+            if (window.innerWidth > 900) {
+                let final__height = parseFloat(getComputedStyle(no__output__text__container).height) + 'px';
+                output__container.style.height = final__height;
+            } else if (window.innerWidth < 901 && window.innerWidth > 554) {
+                output__container.style.height = '133px'
+            } else if (window.innerWidth < 555) {
+                let final__height = parseFloat(getComputedStyle(no__output__text__container).height) + 'px';
+                output__container.style.height = final__height;
+            }
         }
 }
+
