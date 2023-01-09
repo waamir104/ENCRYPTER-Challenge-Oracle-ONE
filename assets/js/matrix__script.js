@@ -1,8 +1,6 @@
-//               Encrypter  Matrix       version--  1.0
-// William S. Peña [waamirdev@gmail.com] 23rd December, 2022 
-
+//             Encrypter   --version  2.0
+// William S. Peña [waamirdev@gmail.com] 2nd January, 2023
 window.addEventListener("resize", resize__canvas);
-
 // Get the canvas node and the drawing context
 const canvas = document.getElementById('matrix__effect');
 const pencil = canvas.getContext('2d');
@@ -51,35 +49,34 @@ setInterval(matrix, 55);
 // Function to resize the canvas
 
 function resize__canvas() {
-  canvas.width = output__container.offsetWidth;
-  width = canvas.width * 5;
-  height = canvas.height = output__container.offsetHeight;
+    canvas.width = output__container.offsetWidth;
+    width = canvas.width * 5;
+    height = canvas.height = output__container.offsetHeight;
 }
-
 
 // Lines to hide the matrix canvas
 
-var opacity_min = 1;
-var continue_opacity = true;
+var matrix__container__opacity = 1;
+var continue__minimizing__opacity = true;
 
 function minimize__opacity() {
-  if (continue_opacity) {
-    if (opacity < 0) {
-      matrix__container.style.display = "none";
-      continue_opacity = false;
-    } else {
-      matrix__container.style.opacity = opacity;
-      opacity-= 0.1;
+    if (continue__minimizing__opacity) {
+        if (matrix__container__opacity < 0) {
+            matrix__container.style.display = 'none';
+            continue__minimizing__opacity = false;
+        } else {
+            matrix__container.style.opacity = matrix__container__opacity;
+            matrix__container__opacity -= 0.1;
+        }
     }
-  }
 }
 
-function dont_show_matrix() {
-  if (continue_opacity) {
-    setInterval(minimize__opacity, 100);
-  }
-  opacity = 1;
-  continue_opacity = true;
+function dont__show__matrix() {
+    if (continue__minimizing__opacity) {
+        setInterval(minimize__opacity, 100);
+    }
+    matrix__container__opacity = 1;
+    continue__minimizing__opacity = true;
 }
 
-matrix__container.onmouseover = dont_show_matrix;
+matrix__container.onmouseover = dont__show__matrix;

@@ -1,113 +1,135 @@
 /* 
-                Encrypter       version--  1.0
-William S. Peña [waamirdev@gmail.com] 23rd December, 2022 
- */
+            Encrypter   --version  2.0
+William S. Peña [waamirdev@gmail.com] 2nd January, 2023 
+*/
 
 *{
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
 }
 
+body{
+    background: #ffe6e6;
+    min-width: 320px;
+}
+
 body::-webkit-scrollbar{
-    background-color: transparent;
+    background-color: #ffe6e6;
 }
 
 body::-webkit-scrollbar-track{
     margin-top: 5px;
-    background: #000000;
+    background-color: #000;
     border-radius: 10px 10px 0 0;
 }
 
 body::-webkit-scrollbar-thumb{
-    background: linear-gradient(orange, red);
+    background: linear-gradient(darkorange, red);
     border-radius: 10px;
     border: .2em solid black;
 }
 
-body{
-    background: #ffe6e6;
-}
-
-header{
-    padding: 40px 40px 0 40px;
-}
-
-.alura__logo{
-    width: 31.09px;
-    height: 48px;
-}
-
-main{
-    margin: 40px;
+#content{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px;
+    margin-right: 32px;
+}
+
+.content__containers{
+    height: 944px;
 }
 
 /* Container where the input text and the actions are */
 
-.input__container{
-    margin: 40px 40px 40px 200px;
-    width: 680px;
-    height: 784px;
+#left__container{
+    width: 70.392%;
+    min-width: 600px;
 }
 
-.text__input{
+#logo__alura{
+    padding-bottom: 40px;
+}
+
+#logo__alura__img{
+    width: 31.09px;
+    height: 48px;
+}
+
+#input__container{
+    width: 71.505%;
+    height: 784px;
+    margin: 40px;
+    margin-left: 21.032%;
+}
+
+#input__textarea__container{
+    width: 100%;
+    height: 655px;
+}
+
+#textarea__input{
     font-size: 32px;
     color: #990000;
     background: transparent;
     width: 100%;
-    height: 655px;
+    height: 100%;
     border: none;
     outline: none;
     resize: none;
     line-height: 35px;
 }
 
-.text__input::placeholder{
+#textarea__input::placeholder{
     color: #990000;
-    opacity: 0.7;
+    opacity: .7;
 }
 
-.text__input::-webkit-scrollbar{
+/* Input Scrollbar */
+
+#textarea__input::-webkit-scrollbar{
+    background-color: #ffe6e6;
+}
+
+#textarea__input::-webkit-scrollbar-track{
+    margin: 5px;
     background-color: transparent;
-}
-
-.text__input::-webkit-scrollbar-track{
-    margin-top: 5px;
-    background: #ffe6e6;
     border-radius: 10px;
 }
 
-.text__input::-webkit-scrollbar-thumb{
-    background: linear-gradient(orange, red);
+#textarea__input::-webkit-scrollbar-thumb{
+    background: linear-gradient(darkorange, red);
     border-radius: 10px;
-    border: .15em solid #ffe6e6;
+    border: .1em solid #ffe6e6;
 }
 
-.warning{
+#warning{
     width: auto;
     height: auto;
-    margin: 6px 0 0 0;
+    margin-top: 6px;
 }
 
-.warning__sign{
+#warning__sign{
     width: 16px;
     height: 16px;
 }
 
-.warning span{
+#warning__message{
     font-size: 12px;
     line-height: 150%;
     vertical-align: top;
 }
 
+/* Input Buttons */
 
-.input__btns{
+#input__btns{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-.input__btns button, .output__btn button{
+.buttons{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
@@ -121,37 +143,41 @@ main{
     transition: 300ms;
 }
 
-.encrypt__btn{
+#encrypt__btn{
     background: #990000;
     color: #ffe6e6;
-    margin: 16px 24px 16px 0;
+    margin: 16px 24px;
+    margin-left: 0;
 }
 
-.encrypt__btn:hover{
+#encrypt__btn:hover{
+    background: linear-gradient(darkorange, red);
+    border: transparent;
+}
+
+#decrypt__btn{
     background: #ffe6e6;
     color: #990000;
+    margin: 16px 0;
 }
 
-.decrypt__btn{
-    background: #ffe6e6;
-    color: #990000;
-    margin: 16px 24px 16px 0;
-}
-
-.decrypt__btn:hover{
-    background: #990000;
+#decrypt__btn:hover{
+    background: linear-gradient(darkorange, red);
+    border: transparent;
     color: #ffe6e6;
 }
 
-/* Container where the output text, the action and the messages are */
+/* Container where the output text, the action button and the messages are */
 
-.output__container{
-    position: absolute;
-    width: 400px;
+#right__container{
+    width: 29.608%;
+    min-width: 350px;
+    max-width: 400px;
+}
+
+#output__container{
+    width: 100%;
     height: 944px;
-    top: 40px;
-    left: 991px;
-    padding: 32px;
     background: rgb(255, 255, 255);
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.8);
     border: none;
@@ -160,27 +186,32 @@ main{
 
 /* No output text */
 
-.no__output__text__containers{
-    width: 336px;
-}
-
-.person__image{
-    position: absolute;
+#no__output__text__container{
     width: 100%;
-    top: 200px;
+    height: 100%;
+    padding: 32px;
 }
 
-.messages{
-    position: relative;
-    top: 580px;
+#person__image__container{
+    width: 100%;
+    padding-top: 168px;
 }
 
-.messages p{
+#person__image{
+    width: 100%;
+}
+
+.no__text__messages{
+    width: 100%;
+    margin-top: 106px;
+}
+
+.no__text__messages p{
     text-align: center;
     width: 100%;
 }
 
-.no__message{
+#no__messages{
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
@@ -188,7 +219,7 @@ main{
     color: #343A40;
 }
 
-.order{
+#order{
     height: 48px;
     font-weight: 400;
     font-size: 16px;
@@ -198,84 +229,82 @@ main{
 
 /* Output text */
 
-.output__text{
-    width: 336px;
+#output__text__container{
+    width: 100%;
+    height: auto;
+    padding: 32px;
+    display: none;
 }
 
-.text__output{
+#output__textarea__container{
     width: 100%;
     height: 781px;
+}
+
+#textarea__output{
+    width: 100%;
+    height: 100%;
     font-size: 24px;
     line-height: 150%;
     color: #495057;
     outline: none;
-    resize: none;
     border: none;
+    resize: none;
 }
 
-.text__output::-webkit-scrollbar{
+/* Output Scrollbar */
+
+#textarea__output::-webkit-scrollbar{
     background-color: transparent;
 }
 
-.text__output::-webkit-scrollbar-track{
-    margin-top: 5px;
+#textarea__output::-webkit-scrollbar-track{
+    margin: 5px;
     background: #fff;
     border-radius: 10px;
 }
-
-.text__output::-webkit-scrollbar-thumb{
-    background: linear-gradient(orange, red);
+#textarea__output::-webkit-scrollbar-thumb{
+    background: linear-gradient(darkorange, red);
     border-radius: 10px;
     border: .15em solid #fff;
 }
 
-.output__btn{
-    margin: 32px 0;
+/* Output button */
+
+#output__btn{
+    margin-top: 32px;
 }
 
-.copy__btn{
-    background: #FFFFFF;
+#copy__btn{
+    background-color: #FFFFFF;
     color: #990000;
+    width: 100%;
 }
 
-.copy__btn:hover {
-    background: #990000;
-    color: #FFFFFF;
-}
-
-
-/* To show only one output container */
-
-.no__output__text__container{
-    display: block;
-    opacity: 1;
-}
-
-.output__text__container{
-    display: none;
+#copy__btn:hover{
+        background: #990000;
+        color: #FFFFFF;
 }
 
 /* Matrix Effect */
 
-.matrix__container{
-    position: absolute;
-    top: 40px;
-    left: 991px;
-    width: 400px;
-    height: 944px;
+#matrix__container{
+    position: relative;
+    top: -944px;
+    width: 100%;
+    height: 100%;
     border-radius: 32px;
-    background: #FFF;
+    background: #fff;
     display: none;
 }
 
-.matrix__effect{
+#matrix__effect{
     border-radius: 32px;
 }
 
 /* Gradient between main and footer */
 
-.background__gradient{
-    display: block;
+#background__gradient{
     height: 120px;
     background: linear-gradient(#ffe6e6, #000000);
 }
@@ -283,221 +312,282 @@ main{
 /* Footer */
 
 footer{
-    /* height: 400px; */
     background: rgb(0, 0, 0);
     text-align: center;
     padding: 10px;
 }
 
-.footer{
+#footer__content{
     display: block;
-    width: 70%;
+    width: 75%;
+    margin: 5px auto;
+    background: #000;
+}
+
+#logo__wd{
+    width: 32%;
     margin: 0 auto;
 }
 
-.logo__wd{
-    width: 300px;
-    margin: 0 auto;
-}
-
-/* Social Media Apps */
-
-.social__media{
+#social__media__container{
     width: auto;
     height: 30px;
     text-align: right;
 }
 
-.social__media__logos{
+.social__logos{
     width: 30px;
-    margin: 0 2px;
+    height: 100%;
+    margin: 0 3px;
 }
 
-.copyright {
-    margin: 0px 20px;
-    color: #FFFFFF;
+#copyright__container{
+    margin: 0 20px 10px;
+    color: #fff;
 }
 
-.copyright p{
-    margin-bottom: 4px;
-}
+/* Responsive design for a screen with a width between 1040px and 901px */
 
-
-/* Responsive design for a Tablet */
-
-@media screen and (max-width: 768px) {
-    header{
-        padding: 0;
-        margin: 73.42px 40px 90px 40px;
+@media screen and (max-width: 1040px) {
+    #content{
+        margin: 40px;
     }
     
-    .alura__logo{
+    /* Container where the input text and the actions are */
+
+    #left__container{
+        min-width: 480px;
+    }
+
+    #logo__alura{
+        padding: 0;
+        padding-bottom: 100px;
+    }
+
+    #logo__alura__img{
         width: 31.09px;
         height: 50.58px;
     }
 
-    main{
+    #input__container{
+        width: 80%;
+        margin: 0 14% 0 6%;
+    }
+}
+
+/*  Responsive design for a screen with a 1000px width or lower */
+
+@media screen and (max-width: 1000px) {
+    #logo__wd{
+        min-width: 235px;
+    }
+}
+
+/*  Responsive design for a screen with a 900px width or lower */
+
+@media screen and (max-width: 900px) {
+    #content{
+        margin: 40px;
         flex-direction: column;
+    }
+
+    .content__containers{
+        height: auto;
     }
 
     /* Container where the input text and the actions are */
 
-    .input__container{
+    #left__container{
+        width: 100%;
+        min-width: 0;
+    }
+
+    #logo__alura{
+        padding: 0;
+        margin-top: 33.42px;
+        margin-bottom: 90px;
+    }
+
+    #input__container{
+        width: 100%;
+        height: auto;
         margin: 0;
-        width: 100%;
     }
 
-    /* Container where the output text, the action and the messages are */
+    #input__textarea__container{
+        height: 571px;
+    }
 
-    .output__container{
-        position: static;
-        margin: 48px 0 0 0;
+    /* Input buttons */
+
+    #input__btns{
+        justify-content: center;
+    }
+
+    /* Container where the output text, the action button and the messages are */
+
+    #right__container{
         width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    #output__container{
         height: 133px;
+        margin-top: 48px;
     }
 
-    .person__image{
+    /* No Output text */
+
+    #person__image__container{
         display: none;
     }
 
-    .messages{
-        position: static;
-        width: 100%;
-        height: 69px;
-    }
-    
-    .no__message{
-        height: 29px;
-        line-height: 28.8px;
-        margin: 0 0 16px 0;
+    .no__text__messages{
+        margin-top: 0;
     }
 
-    .order{
-        height: 24px;
+    #no__messages{
+        height: 29px;
+        line-height: 28.8px;
+        margin-bottom: 16px;
     }
 
     /* Output text */
 
-    .output__text__container{
-        width: 100%
+    #output__container{
+        max-height: 595px;
     }
 
-    .output__text{
-        width: 100%;
+    #output__textarea__container{
         height: 180px;
-    }
-
-    .text__output{
-        width: 100%;
-        height: 100%;
-    }
-
-    .output__btn button{
-        width: 100%;
+        min-height: 180px;
+        max-height: 432px;
     }
 
     /* Matrix Effect */
 
-    .matrix__container{
-        position: relative;
+    #matrix__container{
         top: -343px;
-        left: 0px;
-        width: 100%;
-        height: 343px;
-    }
-
-    /* Copyright */
-
-    .copyright{
-        margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    header{
-        height: 96px;
-        margin: 0;
-        padding-top: 24px;
-        padding-left: 16px;
-        padding-bottom: 24px;
-    }
-
-    .alura__logo{
-        width: 32px;
-        height: 48px;
-    }
-
-    main{
-        margin: 16px;
-    }
-
-    /* Container where the input text and the actions are */
-
-    .input__container{
-        width: 343px;
-        margin-top: 56px;
-        height: 500px;
-    }
-
-    .text__input{
-        height: 300px;
-    }
-
-    
-    /* Encrypt and Decrypt buttons */
-
-    .input__btns{
-        height: 158px;
-        display: block;
-    }
-
-    .input__btns button{
-        margin: 0;
-        margin-top: 16px;
-    }
-
-    .encrypt__btn{
-        width: 343px;
-    }
-
-    /* Container where the output text, the action and the messages are */
-
-    .output__container{
-        position: relative;
-        left: 9px;
-        width: 327px;
-        height: 186px;
-        margin: 0;
-    }
-
-    .messages{
-        height: 122px;
-    }
-
-    .no__message{
-        height: 45%;
-    }
-
-    /* Matrix Effect */
-
-    .matrix__container{
-        top: -303px;
-        left: 9px;
-        width: 327px;
-        height: 343px;
     }
 
     /* Footer */
 
-    .footer{
-        width: 80%;
+    #copyright__container{
+        margin-top: 5px;
+    }
+}
+
+/*  Responsive design for a screen with a 700px width or lower */
+
+@media screen and (max-width: 700px) {
+    #logo__wd{
+        min-width: 200px;
     }
 
-    .logo__wd{
-        width: 71%;
+    #copyright__container{
+        margin-top: 15px;
+    }
+}
+
+/*  Responsive design for a screen with a 554px width or lower */
+
+@media screen and (max-width: 554px) {
+    #output__container{
+        height: 150px;
     }
 
-    .copyright{
-        margin: 15px;
+    #logo__wd{
+        min-width: 170px;
+    }
+
+    #copyright__container{
+        margin-top: 17px;
+    }
+}
+
+/*  Responsive design for a screen with a 375px width or lower */
+
+@media screen and (max-width: 450px) {
+    #content{
+        margin: 40px 16px;
+        margin-top: 0;
+    }
+
+    #logo__alura{
+        padding: 23px 0;
+        margin: 0;
+    }
+
+    #logo__alura__img{
+        width: 32px;
+        height: 48px;
+    }
+
+    #input__container{
+        margin-top: 72px;
+        height: auto
+    }
+
+    #input__textarea__container{
+        height: 385px;
+        min-height: 385px;
+        max-height: 570px;
+    }
+
+    #right__container{
+        padding: 0 9px;
+    }
+
+    #output__container{
+        max-height: 595px;
+    }
+
+    #output__textarea__container{
+        max-height: 432px;
+    }
+}
+
+/*  Responsive design for a screen with a 379px width or lower */
+
+@media screen and (max-width: 379px) {
+
+    /* Input container */
+
+    #input__textarea__container{
+        height: 300px;
+        min-height: 300px;
+        max-height: 624px;
+        
+    }
+
+    /* Output container */
+
+    #output__container{
+        height: 186px;
+    }
+
+    #no__messages{
+        height: 45%;
+    }
+
+    /* Input buttons */
+
+    #input__btns{
+        display: block;
+    }
+
+    #encrypt__btn{
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    #decrypt__btn{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    #copyright__container{
+        margin: 20px;
     }
 }

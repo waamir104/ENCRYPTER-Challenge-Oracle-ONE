@@ -1,111 +1,122 @@
-//                   Encrypter       version--  1.0
-// William S. Peña [waamirdev@gmail.com] 23rd December, 2022 
+//             Encrypter   --version  2.0
+// William S. Peña [waamirdev@gmail.com] 2nd January, 2023
 
-document.getElementById("encrypt__btn").addEventListener("click", encrypt);
-document.getElementById("decrypt__btn").addEventListener("click", decrypt);
-document.getElementById("copy__btn").addEventListener("click", copy__output__text);
-window.addEventListener("resize", resize__output__container);
-window.addEventListener("resize", resize__main);
+// Event Listeners 
+document.getElementById('encrypt__btn').addEventListener('click', encrypt);
+document.getElementById('decrypt__btn').addEventListener('click', decrypt);
+document.getElementById('copy__btn').addEventListener('click', copy__output__text);
 
-const textarea__input = document.querySelector(".text__input");
-var textarea__output = document.querySelector(".text__output");
+window.addEventListener('resize', adjust__output__container);
 
-var output__text__container = document.querySelector(".output__text__container");
-var no__output__text__container = document.querySelector(".no__output__text__container");
-var output__container = document.querySelector(".output__container");
-var matrix__container = document.querySelector(".matrix__container");
-var main = document.querySelector('main');
 
-// Get the display value of the output__text__container
-var style = window.getComputedStyle(output__text__container);
-var display;
+// Declaration of variables
+const input__textarea__container = document.getElementById('input__textarea__container');
+const textarea__input = document.getElementById('textarea__input');
+const textarea__output = document.getElementById('textarea__output');
+const no__output__text__container = document.getElementById('no__output__text__container');
+const output__text__container = document.getElementById('output__text__container');
+const matrix__container = document.getElementById('matrix__container');
+const output__container = document.getElementById('output__container');
+const output__textarea__container = document.getElementById('output__textarea__container');
 
-function resize__main() {
-    if ((window.innerWidth < 376) && (display == 'block')) {
-        main.style.height = "900px"
-    } else if ((window.innerWidth < 769) && (display == 'block')) {
-        main.style.height = "1170px"
-    } else if ((window.innerWidth > 768) && (display == 'block')) {
-        main.style.height = "";
-    }
-}
+var input__textarea__message = '';
 
-function show__output__text() {
-    if ( (window.innerWidth <= 768)) {
-        output__container.style.height = "343px";
-    }
-    resize__canvas();
-    no__output__text__container.style.display = "none";
-    no__output__text__container.style.opacity = "0";
-    output__text__container.style.display = "block";
-    output__text__container.style.opacity = "1";
-    matrix__container.style.display = "block";
-    matrix__container.style.opacity = "1";
-    
-    display = style.getPropertyValue('display'); 
-    resize__main();
-}
+// Functions
 
+// Validates the textarea__input value
 function validate__message() {
-    if (textarea__input.value.length < 1) {
+    let textarea__input__value = textarea__input.value;
+    let textarea__input__trimmed__value = textarea__input__value.trim();
+
+    textarea__input.value = textarea__input__trimmed__value;
+
+    if (textarea__input__trimmed__value < 1) {
         return false;
     } else {
-        return true; 
+        return true;
     }
 }
 
-function encrypt() {;
+// Shows the output__text__container
+
+function show__output__text__container() {
+    no__output__text__container.style.display = 'none';
+    no__output__text__container.style.opacity = '0';
+    output__text__container.style.display = 'block';
+    output__text__container.style.opacity = '1';
+    matrix__container.style.display = 'block';
+    matrix__container.style.opacity = '1';
+
+    // Calls Functions
+    adjust__output__container();
+    resize__canvas(); // matrix__script.js function
+}
+
+// Encrypts the inserted value
+
+function encrypt() {
     if (validate__message()) {
         let message = textarea__input.value;
 
+        // Changes the vowels in the message
         let encrypted__message = message
-        .replaceAll("e","enter")
-        .replaceAll("i","imes")
-        .replaceAll("a","ai")
-        .replaceAll("o","ober")
-        .replaceAll("u","ufat");
+        .replaceAll('e', 'enter')
+        .replaceAll('i', 'imes')
+        .replaceAll('a', 'ai')
+        .replaceAll('o', 'ober')
+        .replaceAll('u', 'ufat');
 
-        textarea__input.value = ""
         textarea__output.value = encrypted__message;
-
-        show__output__text(); 
+        
+        // Calls Functions
+        show__output__text__container();
     }
+    
+    textarea__input.value = '';
+
 }
+
+// Decrypts the inserted value
 
 function decrypt() {
     if (validate__message()) {
-        let encrypted__message = textarea__input.value;
+        let message = textarea__input.value;
 
-        let message = encrypted__message
-        .replaceAll("enter", "e")
-        .replaceAll("imes", "i")
-        .replaceAll("ai", "a")
-        .replaceAll("ober", "o")
-        .replaceAll("ufat", "u");
+        // Changes the encrypted characters
+        let decrypted__message = message
+        .replaceAll('enter', 'e')
+        .replaceAll('imes', 'i')
+        .replaceAll('ai', 'a')
+        .replaceAll('ober', 'o')
+        .replaceAll('ufat', 'u');
 
-        textarea__input.value = "";
-        textarea__output.value = message;
+        textarea__output.value = decrypted__message;
 
-        show__output__text();    
+        // Calls Functions
+        show__output__text__container();
     }
+
+    textarea__input.value = '';
+
+
 }
+
+// Let the user copy the output message 
 
 function copy__output__text() {
-    let copyText = textarea__output;
-    copyText.select();
-    document.execCommand("copy");
+    let copy__text = textarea__output;
+    copy__text.select();
+    document.execCommand('copy');
 }
 
+// Adjust output__container height
 
-function resize__output__container() {
-    if ((window.innerWidth <= 768) && (output__text__container.clientHeight != 0)) {
-        output__container.style.height = "343px";
-    }
+function adjust__output__container() {
+        let output__text__container__display = getComputedStyle(output__text__container).display;
 
-    if ((window.innerWidth > 768) && (output__text__container.clientHeight != 0)) {
-        output__container.style.height = "944px";
-    }
+        if (output__text__container__display == 'block') {
+            let output__text__container__final__height = parseFloat(getComputedStyle(output__text__container).height) + 'px';
+
+            output__container.style.height = output__text__container__final__height;
+        }
 }
-
-
-

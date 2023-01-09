@@ -1,7 +1,7 @@
 <!-- 
-              Encrypter       version--  1.0
-William S. Peña [waamirdev@gmail.com] 23rd December, 2022 
--->
+            Encrypter   --version  2.0
+William S. Peña [waamirdev@gmail.com] 2nd January, 2023
+ -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,71 +9,77 @@ William S. Peña [waamirdev@gmail.com] 23rd December, 2022
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador - WaamirDev</title>
-    <link rel="shortcut icon" href="assets/images/icon.ico">
+    <title>Encrypter - WaamirDev</title>
+    <link rel="shorcut icon" href="assets/images/icon.ico">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
 </head>
 <body>
-    <header>
-        <img src="assets/images/Logo_Alura.png" alt="Alura Logo" class="alura__logo">    
-    </header>
-    <main class="main">
-        <section class="input__container">
-            <div class="input__text">
-                <textarea name="text__input" id="" cols="30" rows="10" class="text__input" placeholder="Insert Text Here..."></textarea>
-            </div>
-            <div class="warning">
-                <img src="assets/images/Warning_sign.png" alt="Warning Sign" class="warning__sign">
-                <span>Only lowercase letters are processed</span>
-            </div>
-            <div class="input__btns">
-                <button id="encrypt__btn" class="encrypt__btn">Encrypt</button>
-                <button id="decrypt__btn" class="decrypt__btn">Decrypt</button>
-            </div>
-        </section>
-        <section class="output__container" id="output__container">
-            <div class="no__output__text__container">
-                <div class="person__image">
-                    <img src="assets/images/Muñeco.png" alt="Person">
+    <main>
+        <div id="content">
+            <div id="left__container" class="content__containers">
+                <div id="logo__alura">
+                    <img src="assets/images/Logo_Alura.png" alt="Logo Alura" id="logo__alura__img">
                 </div>
-                <div class="messages">
-                    <p class="no__message">No message was found</p>
-                    <p class="order">Insert the text you want to be Encrypt or Decrypt.</p>
-                </div>
+                <section id="input__container">
+                    <div id="input__textarea__container">
+                        <textarea id="textarea__input" cols="30" rows="10" placeholder="Insert Text Here..."></textarea>
+                    </div>
+                    <div id="warning">
+                        <img src="assets/images/Warning_sign.png" alt="Warning Sign" id="warning__sign">
+                        <span id="warning__message">Only lowercase letters are processed</span>
+                    </div>
+                    <div id="input__btns">
+                        <button id="encrypt__btn" class="buttons">Encrypt</button>
+                        <button id="decrypt__btn" class="buttons">Decrypt</button>
+                    </div>
+                </section>
             </div>
-            <div class="output__text__container" id="output__text__container">
-                <div class="output__text">
-                    <textarea name="" id="" cols="30" rows="10" readonly="true" class="text__output"></textarea>
-                </div>
-                <div class="output__btn">
-                    <button id="copy__btn" class="copy__btn">Copy</button>
-                </div>
+            <div id="right__container" class="content__containers">
+                <section id="output__container">
+                    <div id="no__output__text__container">
+                        <div id="person__image__container">
+                            <img src="assets/images/Muñeco.png" alt="Person" id="person__image">
+                        </div>
+                        <div class="no__text__messages">
+                            <p id="no__messages">No message was found</p>
+                            <p id="order">Insert the text you want to be Encrypted or Decrypted</p>
+                        </div>
+                    </div>
+                    <div id="output__text__container">
+                        <div id="output__textarea__container">
+                            <textarea id="textarea__output" cols="30" rows="10" readonly></textarea>
+                        </div>
+                        <div id="output__btn">
+                            <button id="copy__btn" class="buttons">Copy</button>
+                        </div>
+                    </div>
+                    <div id="matrix__container">
+                        <canvas id="matrix__effect"></canvas>
+                    </div>
+                </section>
             </div>
-        </section>
-        <div class="matrix__container">
-            <canvas id="matrix__effect" class="matrix__effect" ></canvas>
         </div>
+        <div id="background__gradient"></div>
     </main>
-    <div class="background__gradient"></div>
     <footer>
-        <div class="footer">
-            <div class="logo__author__container">
-                <img src="assets/images/waamirdev_logo.png" class="logo__wd" alt="WaamirDev Logo" >
+        <section id="footer__content">
+            <div id="logo__author__container">
+                <img src="assets/images/waamirdev_logo.png" alt="WaamirDev Logo" id="logo__wd">
             </div>
             <hr>
-            <section class="social__media">
-                <a href="https://www.linkedin.com/in/waamirdev-william-pe%C3%B1a" target="_blank"><img src="assets/images/LinkedIn logo.png" alt="LinkedIn Logo" class="social__media__logos"></a>
-                <a href="https://github.com/waamir104" target="_blank"><img src="assets/images/GitHub logo.png" alt="GitHub Logo" class="social__media__logos"></a>
-            </section>
-            <section class="copyright">
-                <p>&#169 Copyright 2022 WaamirDev. All Rights Reserved</p>
+            <div id="social__media__container">
+                <a href="https://www.linkedin.com/in/waamirdev-william-pe%C3%B1a" target="_blank"><img src="assets/images/LinkedIn logo.png" alt="LinkedIn Logo" id="linkedin__logo" class="social__logos"></a>
+                <a href="https://github.com/waamir104" target="_blank"><img src="assets/images/GitHub logo.png" alt="GitHub Logo" id="github__logo" class="social__logos"></a>
+            </div>
+            <div id="copyright__container">
+                <p>&#169 Copyright 2023 WaamirDev. All Rights Reserved</p>
                 <p>All individual works are copyright protected by their owners & contributors.</p>
-            </section>
-        </div>
+            </div>
+        </section>
     </footer>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/matrix_script.js"></script>
+    <script src="assets/js/matrix__script.js"></script>
 </body>
 </html>
