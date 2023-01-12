@@ -1,6 +1,6 @@
 /* 
-            Encrypter   --version  2.1
-William S. Peña [waamirdev@gmail.com] 9th January, 2023 
+            Encrypter   --version  2.2
+William S. Peña [waamirdev@gmail.com] 12th January, 2023 
 */
 
 *{
@@ -67,6 +67,8 @@ body::-webkit-scrollbar-thumb{
 #input__textarea__container{
     width: 100%;
     height: 655px;
+    min-height: 655px;
+    max-height: 655px;
 }
 
 #textarea__input{
@@ -239,6 +241,8 @@ body::-webkit-scrollbar-thumb{
 #output__textarea__container{
     width: 100%;
     height: 781px;
+    min-height: 781px;
+    max-height: 781px;
 }
 
 #textarea__output{
@@ -416,6 +420,8 @@ footer{
 
     #input__textarea__container{
         height: 571px;
+        min-height: 571px;
+        max-height: 571px;
     }
 
     /* Input buttons */
@@ -534,8 +540,8 @@ footer{
     }
 
     #input__textarea__container{
-        height: 385px;
-        min-height: 385px;
+        height: 387px;
+        min-height: 387px;
         max-height: 570px;
     }
 

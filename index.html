@@ -1,6 +1,6 @@
 <!-- 
-            Encrypter   --version  2.1
-William S. Peña [waamirdev@gmail.com] 9th January, 2023
+            Encrypter   --version  2.2
+William S. Peña [waamirdev@gmail.com] 12th January, 2023
  -->
 
 <!DOCTYPE html>
@@ -14,6 +14,9 @@ William S. Peña [waamirdev@gmail.com] 9th January, 2023
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
+    
+    <script src="assets/js/script.js" type="text/javascript" defer></script>
+    <script src="assets/js/matrix__script.js" type="text/javascript" defer></script>
 </head>
 <body>
     <main>
@@ -24,7 +27,7 @@ William S. Peña [waamirdev@gmail.com] 9th January, 2023
                 </div>
                 <section id="input__container">
                     <div id="input__textarea__container">
-                        <textarea id="textarea__input" cols="30" rows="10" placeholder="Insert Text Here..."></textarea>
+                        <textarea id="textarea__input" cols="30" rows="10" placeholder="Insert Text Here..."  autocomplete="off" spellcheck="false"></textarea>
                     </div>
                     <div id="warning">
                         <img src="assets/images/Warning_sign.png" alt="Warning Sign" id="warning__sign">
@@ -49,7 +52,7 @@ William S. Peña [waamirdev@gmail.com] 9th January, 2023
                     </div>
                     <div id="output__text__container">
                         <div id="output__textarea__container">
-                            <textarea id="textarea__output" cols="30" rows="10" readonly></textarea>
+                            <textarea id="textarea__output" cols="30" rows="10" spellcheck="false" readonly></textarea>
                         </div>
                         <div id="output__btn">
                             <button id="copy__btn" class="buttons">Copy</button>
@@ -79,7 +82,5 @@ William S. Peña [waamirdev@gmail.com] 9th January, 2023
             </div>
         </section>
     </footer>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/matrix__script.js"></script>
 </body>
 </html>

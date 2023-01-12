@@ -1,5 +1,5 @@
-//             Encrypter   --version  2.1
-// William S. Peña [waamirdev@gmail.com] 9th January, 2023
+//             Encrypter   --version  2.2
+// William S. Peña [waamirdev@gmail.com] 12th January, 2023
 window.addEventListener("resize", resize__canvas);
 // Get the canvas node and the drawing context
 const canvas = document.getElementById('matrix__effect');
@@ -52,6 +52,12 @@ function resize__canvas() {
     canvas.width = output__container.offsetWidth;
     width = canvas.width * 5;
     height = canvas.height = output__container.offsetHeight;
+
+    let output__textarea__container__height = parseFloat(getComputedStyle(output__textarea__container).height);
+    let output__textarea__container__minHeight = parseFloat(getComputedStyle(output__textarea__container).minHeight);
+    let output__text__container__height = output__text__container.offsetHeight;
+
+    matrix__container.style.top = '-' + output__text__container__height + 'px';
 }
 
 // Lines to hide the matrix canvas
