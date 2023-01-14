@@ -173,6 +173,17 @@ I decided to go for the base model provided, with only some changes like:
     <img alt="Main Page Encrypter Screen Footer" src="README__resources/website/msfoot.jpg" style="border-radius: 10px; width: 90%; margin: 0;">
 </h2>
 
+<a name="final__Design__Matrix">
+<h2 align="center">
+    <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/party-popper_1f389.png" width="35">
+    Final Design Matrix
+    <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/party-popper_1f389.png" width="35">
+</h2>
+
+<h2 align="center">
+    <img alt="Main Page Encrypter Screen Matrix" src="README__resources/website/ms__matrix.jpg" style="border-radius: 10px; width: 90%; margin: 0;">
+</h2>
+
 # :gem: Responsive Design
 
 Taking into account the Figma base model of the website provided by ONE (Oracle Next Education) and Alura Latam, in which you could see the different sizes that the program was require to adapt, it was necessary to add some @media queries.
