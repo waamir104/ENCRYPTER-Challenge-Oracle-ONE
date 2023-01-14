@@ -35,7 +35,7 @@
 
 # :trophy: Badges
 
-Pending
+<img alt="Badge" src="README__resources/Badges/Badge__1.jpg" style="width: 50%;">
 
 # :pencil: Index
 
@@ -44,22 +44,22 @@ Pending
 * [Introduction](#bulb-introduction)
 * [Project Status](#project-status-traffic_light)
 * [Usage](#usage)
-* [Encryption](#encryption-lock)
-* [Decryption](#decryption-unlock)
+    * [Encryption](#encryption-lock)
+    * [Decryption](#decryption-unlock)
 * [Demostration](#mag_right-demostration)
-* [Encryption](#encryption-lock-1)
-* [Decryption](#decryption-unlock-1)
+    * [Encryption](#encryption-lock-1)
+    * [Decryption](#decryption-unlock-1)
 * [Tecnologies](#computer-tecnologies)
-* [For Development](#for-development)
-* [For Versioning](#for-versioning)
+    * [For Development](#for-development)
+    * [For Versioning](#for-versioning)
 * [Design](#art-design)
-* [Figma Design](#figma__Design)
-* [Final Design](#final__Design)
+    * [Figma Design](#figma__Design)
+    * [Final Design](#final__Design)
 * [Responsive Design](#gem-responsive-design)
 * [Download](#download-arrow_double_down)
-* [Fork](#small_orange_diamond-fork)
-* [Download ZIP](#small_orange_diamond-download-zip)
-* [Clone GIT](#small_orange_diamond-clone-git)
+    * [Fork](#small_orange_diamond-fork)
+    * [Download ZIP](#small_orange_diamond-download-zip)
+    * [Clone GIT](#small_orange_diamond-clone-git)
 * [Secret Message](#secret-message-exclamationexclamation)
 * [Contact](#e-mail-contact)
 
