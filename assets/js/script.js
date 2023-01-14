@@ -175,9 +175,8 @@ function set__textarea__input__default__values() {
 // Let the user copy the output message 
 
 function copy__output__text() {
-    let copy__text = textarea__output;
-    copy__text.select();
-    document.execCommand('copy');
+    let copy__text__value = textarea__output.value;
+    navigator.clipboard.writeText(copy__text__value);
 }
 
 // Adjust output__container height
