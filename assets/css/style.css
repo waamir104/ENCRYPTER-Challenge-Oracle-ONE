@@ -1,6 +1,6 @@
 /* 
-            Encrypter   --version  2.2
-William S. Peña [waamirdev@gmail.com] 12th January, 2023 
+            Encrypter   --version  2.3
+William S. Peña [waamirdev@gmail.com] 14th January, 2023 
 */
 
 *{
@@ -153,8 +153,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 #encrypt__btn:hover{
-    background: linear-gradient(darkorange, red);
-    border: transparent;
+    transform: scale(1.1);
 }
 
 #decrypt__btn{
@@ -164,9 +163,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 #decrypt__btn:hover{
-    background: linear-gradient(darkorange, red);
-    border: transparent;
-    color: #ffe6e6;
+    transform: scale(1.1);
 }
 
 /* Container where the output text, the action button and the messages are */
@@ -286,8 +283,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 #copy__btn:hover{
-        background: #990000;
-        color: #FFFFFF;
+    transform: scale(1.1);
 }
 
 /* Matrix Effect */
