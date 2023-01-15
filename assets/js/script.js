@@ -1,5 +1,5 @@
-//             Encrypter   --version  2.2
-// William S. Peña [waamirdev@gmail.com] 12th January, 2023
+//             Encrypter   --version  2.3
+// William S. Peña [waamirdev@gmail.com] 14th January, 2023
 
 // Event Listeners 
 document.getElementById('encrypt__btn').addEventListener('click', encrypt);
@@ -124,7 +124,18 @@ function encrypt() {
         .replaceAll('i', 'imes')
         .replaceAll('a', 'ai')
         .replaceAll('o', 'ober')
-        .replaceAll('u', 'ufat');
+        .replaceAll('u', 'ufat')
+
+        .replaceAll('1', 'qwq')
+        .replaceAll('2', 'dwd')
+        .replaceAll('3', 'ypq')
+        .replaceAll('4', 'kl')
+        .replaceAll('5', 'lññ')
+        .replaceAll('6', 'pñp')
+        .replaceAll('7', 'vsvv')
+        .replaceAll('8', 'mxz')
+        .replaceAll('9', '##q#')
+        .replaceAll('0', 'hjkgh');
 
         textarea__output.value = encrypted__message;
         
@@ -147,7 +158,18 @@ function decrypt() {
         .replaceAll('imes', 'i')
         .replaceAll('ai', 'a')
         .replaceAll('ober', 'o')
-        .replaceAll('ufat', 'u');
+        .replaceAll('ufat', 'u')
+
+        .replaceAll('qwq', '1')
+        .replaceAll('dwd', '2')
+        .replaceAll('ypq', '3')
+        .replaceAll('kl', '4')
+        .replaceAll('lññ', '5')
+        .replaceAll('pñp', '6')
+        .replaceAll('vsvv', '7')
+        .replaceAll('mxz', '8')
+        .replaceAll('##q#', '9')
+        .replaceAll('hjkgh', '0');
 
         textarea__output.value = decrypted__message;
 
