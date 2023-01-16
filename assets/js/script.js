@@ -73,6 +73,7 @@ function adjust__textarea__input__resizing() {
 function validate__message() {
     let textarea__input__value = textarea__input.value;
     let textarea__input__trimmed__value = textarea__input__value.trim();
+    let characters = /[~!@#$%^&*()_+|}{[\]\\\/?><:"`;.,áéíóúàèìòù']/g
 
     textarea__input.value = textarea__input__trimmed__value;
 
@@ -81,7 +82,12 @@ function validate__message() {
         adjust__output__container();
         return false;
     } else {
-        return true;
+        if (textarea__input__trimmed__value.match(characters)) {
+            validate__special__characters();
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 
@@ -141,9 +147,8 @@ function encrypt() {
         
         // Calls Functions
         show__output__text__container();
+        set__textarea__input__default__values();
     }
-    
-    set__textarea__input__default__values();
 }
 
 // Decrypts the inserted value
@@ -175,9 +180,8 @@ function decrypt() {
 
         // Calls Functions
         show__output__text__container();
+        set__textarea__input__default__values();
     }
-
-    set__textarea__input__default__values();
 }
 
 // Sets default values after clicking any action button
