@@ -80,10 +80,13 @@ function validate__message() {
     if (textarea__input__trimmed__value < 1) {
         dont__show__output__container();
         adjust__output__container();
+        if (window.innerWidth < 901) {
+            no__message__alert();
+        }
         return false;
     } else {
         if (textarea__input__trimmed__value.match(characters)) {
-            validate__special__characters();
+            special__characters__alert();
             return false;
         } else {
             return true;
