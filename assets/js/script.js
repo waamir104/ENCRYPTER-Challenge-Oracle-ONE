@@ -199,6 +199,9 @@ function set__textarea__input__default__values() {
 function copy__output__text() {
     let copy__text__value = textarea__output.value;
     navigator.clipboard.writeText(copy__text__value);
+
+    // Calls copy__btn__alert function 
+    copy__btn__alert(); // index__alerts.js 
 }
 
 // Adjust output__container height
