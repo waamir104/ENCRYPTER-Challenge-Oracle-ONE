@@ -5,41 +5,39 @@
 // Message Copied Alert
 
 function copy__btn__alert() {
-Swal.fire({
-    width: '50%',
-    icon: 'success',
-    title: 'Message Copied',
-    showConfirmButton: false,
-    timer: 2000,
-    backdrop: true,
-    timerProgressBar: true,
-    position: 'center',
-    allowOutsideClick: false,
-    allowEscapeKey: false,
-    allowEnterKey: false,
-    stopKeyDownPropagation: false,
-    padding: '0 0 3em 0'
-});
+    Swal.fire({
+        width: '50%',
+        icon: 'success',
+        title: 'Message Copied',
+        showConfirmButton: false,
+        timer: 2000,
+        backdrop: true,
+        timerProgressBar: true,
+        position: 'center',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        padding: '0 0 3em 0'
+    });
 }
 
 // Special Characters Alert
 
 function special__characters__alert() {
-Swal.fire({
-    width: '50%',
-    icon: 'error',
-    title: 'Special characters are NOT allow',
-    text : '~!@#$%^&*()_+|}{[\]\\\/?><:"`;.,áéíóúàèìòù',
-    showConfirmButton: false,
-    backdrop: true,
-    position: 'center',
-    allowOutsideClick: false,
-    allowEscapeKey: false,
-    allowEnterKey: false,
-    stopKeyDownPropagation: false,
-    padding: '0 0 3em 0',
-    showCloseButton: true,
-    closeButtonAriaLabel: 'Close Alert'
+    Swal.fire({
+        width: '50%',
+        icon: 'error',
+        title: 'Special characters are NOT allow',
+        text : '~!@#$%^&*()_+|}{[\]\\\/?><:"`;.,áéíóúàèìòù',
+        showConfirmButton: false,
+        backdrop: true,
+        position: 'center',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        padding: '0 0 3em 0',
+        showCloseButton: true,
+        closeButtonAriaLabel: 'Close Alert'
     })
 }
   
@@ -57,9 +55,8 @@ function no__message__alert() {
         allowOutsideClick: false,
         allowEscapeKey: false,
         allowEnterKey: false,
-        stopKeyDownPropagation: false,
         padding: '0 0 3em 0',
         showCloseButton: true,
         closeButtonAriaLabel: 'Close Alert'
-        })
-    }
+    })
+}
