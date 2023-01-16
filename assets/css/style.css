@@ -309,6 +309,68 @@ body::-webkit-scrollbar-thumb{
     background: linear-gradient(#ffe6e6, #000000);
 }
 
+/* Up Button */
+
+.up__button__container{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: -1;
+}
+
+.up__button{
+    width: 0rem;
+    height: 0rem;
+    background: #900;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.up__button__icon{
+    position: absolute;
+    width: 1rem;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .2s;
+}
+
+.show{
+    z-index: 10;
+}
+
+.show .up__button{
+    animation: popup .3s ease-in-out;
+    width: 3rem;
+    height: 3rem;
+    z-index: 11;
+}
+
+.show .up__button__icon{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup{
+    0%{
+        width: 0rem;
+        height: 0rem;
+    }
+    50%{
+        width: 4rem;
+        height: 4rem;
+    }
+    100%{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
 /* Footer */
 
 footer{

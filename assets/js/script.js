@@ -6,11 +6,32 @@ document.getElementById('encrypt__btn').addEventListener('click', encrypt);
 document.getElementById('decrypt__btn').addEventListener('click', decrypt);
 document.getElementById('copy__btn').addEventListener('click', copy__output__text);
 document.getElementById('textarea__input').addEventListener('input', adjust__textarea__input);
+document.querySelector('.up__button__container').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+});
 
 window.addEventListener('resize', adjust__textarea__output);
 window.addEventListener('resize', adjust__output__container);
 window.addEventListener('resize', adjust__textarea__input__resizing);
 
+// Up button function
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 250) {
+        let up__button__container = document.querySelector('.up__button__container');
+            
+        if (window.innerWidth > 900) {
+            up__button__container.style.right = '1rem';
+        } else {
+            up__button__container.style.right = '.1rem';
+        }
+        document.querySelector('.up__button__container').classList.add('show');
+    } else {
+        document.querySelector('.up__button__container').classList.remove('show');
+    }
+}
 
 
 // Declaration of variables
